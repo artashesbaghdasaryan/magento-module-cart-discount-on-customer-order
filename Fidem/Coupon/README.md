@@ -3,11 +3,6 @@
     ``fidem/module-coupon``
  - [Installation](#markdown-header-installation)
  
- 
-
-
-## Main Functionalities
-
 
 ## Installation
 \* = in production please use the `--keep-generated` option
