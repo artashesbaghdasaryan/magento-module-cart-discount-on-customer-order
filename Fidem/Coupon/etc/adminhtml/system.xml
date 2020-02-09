@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="fidem" sortOrder="998" translate="label">
+			<label>Fidem LLC modules</label>
+		</tab>
+		<section id="fcoupon" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>coupon</label>
+			<tab>fidem</tab>
+			<resource>Fidem_Coupon::config_fidem_coupon</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+			    <field id="prefix" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Coupon code Prefix</label>
+                     <comment>Prefix for coupon code ex. FIDEM-</comment>
+                    <validate>required-entry </validate>
+                </field>
+
+
+			</group>
+
+			<group id="inrangeconfig" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+             <label>Between price range discount configuration</label>
+			<field id="price_start" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Price limitation start</label>
+                     <comment>Discount will be appling greader than this price</comment>
+                    <validate>required-entry  validate-number</validate>
+                </field>
+				  <field id="price_end" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Price limitation end</label>
+                    <comment>beetween start and end you can specify discount 30%</comment>
+                    <validate>required-entry validate-number</validate>
+                </field>
+                <field id="rule_id" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+   				<label>Shopping cart rule</label>
+			   <comment>Here is auto generation true Rules only</comment>
+  			    	 <source_model>Fidem\Coupon\Model\ConfigSource</source_model>
+               </field>
+			   
+			     <field id="coupon_inrange_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Coupon text to customer</label>
+                     <comment>Text should be with format [lorem ipsum] : [couponcode] </comment>
+                </field>
+		    </group>
+         <group id="upperpriceconfig" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+ 				<label>Greater than this price discount section</label>
+			     <field id="price_to_up_sale" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Price</label>
+                     <comment>Discount will be applied greater than this price</comment>
+                    <validate>required-entry  validate-number</validate>
+                </field>
+
+                <field id="rule_id" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+   				<label>Shopping cart rule</label>
+				   <comment>Here is auto generation true Rules only</comment>
+  			    	<source_model>Fidem\Coupon\Model\ConfigSource</source_model>
+               </field>
+			   
+			     <field id="coupon_uptorange_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Coupon text to customer</label>
+                     <comment>Text should be with format [lorem ipsum] : [couponcode] </comment>
+                </field>
+		    </group>
+		</section>
+	</system>
+</config>
